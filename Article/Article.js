@@ -6,8 +6,10 @@ class Article {
     this.domElement = domElement; 
     // create a reference to the ".expandButton" class. 
     this.expandButton = this.domElement.querySelector(".expandButton"); 
+    this.closeButton = this.domElement.querySelector(".closeButton")
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.textContent = "expand"; 
+    this.closeButton.textContent = "close"; 
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', () => this.expandArticle())
 
@@ -30,4 +32,13 @@ class Article {
 
 let articles = document.querySelectorAll(".article"); 
 articles.forEach(element =>  new Article(element)); 
+
+// Stretch Goals: added EventListeners to spice up the page ;)
+
+const changeTitle = document.querySelector(".header h1"); 
+changeTitle.addEventListener('click', element => {
+  changeTitle.textContent = "HELLO THERE!!!"
+})
+
+
 
